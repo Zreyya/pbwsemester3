@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Jan 2026 pada 14.38
+-- Waktu pembuatan: 14 Jan 2026 pada 16.53
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -66,12 +66,12 @@ CREATE TABLE `gallery` (
 --
 
 INSERT INTO `gallery` (`id`, `judul`, `gambar`, `tanggal`, `username`) VALUES
-(0, 'test', '20260112183444.jpg', '2026-01-12 18:34:44', 'admin'),
-(0, '2', '20260112183648.png', '2026-01-12 18:36:48', 'admin'),
-(0, '3', '20260112183712.jpg', '2026-01-12 18:37:12', 'admin'),
-(0, '4', '20260112183755.jpg', '2026-01-12 18:37:55', 'admin'),
-(0, '5', '20260112184021.jpeg', '2026-01-12 18:40:21', 'admin'),
-(0, '6', '20260112184051.jpg', '2026-01-12 18:40:51', 'admin');
+(1, 'test', '20260112183444.jpg', '2026-01-12 18:34:44', 'admin'),
+(2, '2', '20260112183648.png', '2026-01-12 18:36:48', 'admin'),
+(3, '3', '20260112183712.jpg', '2026-01-12 18:37:12', 'admin'),
+(4, '4', '20260112183755.jpg', '2026-01-12 18:37:55', 'admin'),
+(5, '5', '20260112184021.jpeg', '2026-01-12 18:40:21', 'admin'),
+(6, '6', '20260112184051.jpg', '2026-01-12 18:40:51', 'admin');
 
 -- --------------------------------------------------------
 
@@ -109,6 +109,12 @@ ALTER TABLE `article`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `gallery`
+--
+ALTER TABLE `gallery`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
@@ -123,6 +129,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `article`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT untuk tabel `gallery`
+--
+ALTER TABLE `gallery`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

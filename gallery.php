@@ -1,7 +1,7 @@
 <div class="container">
     <!-- Button trigger modal -->
 <button type="button" class="btn btn-secondary mb-2" data-bs-toggle="modal" data-bs-target="#modalTambah">
-    <i class="bi bi-plus-lg"></i> Tambah Gallery
+    <i class="bi bi-plus-lg"></i> Tambah gallery
 </button>
     <div class="row">
         <div class="table-responsive" id="gallery_data">
@@ -12,14 +12,14 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Tambah Gambar</h1>
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Tambah gallery</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form method="post" action="" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="formGroupExampleInput" class="form-label">Judul</label>
-                                <input type="text" class="form-control" name="judul" placeholder="Tuliskan Judul Gallery" required>
+                                <input type="text" class="form-control" name="judul" placeholder="Tuliskan Judul Artikel" required>
                             </div>
                             <div class="mb-3">
                                 <label for="formGroupExampleInput2" class="form-label">Gambar</label>
@@ -66,7 +66,6 @@ include "upload_foto.php";
 //jika tombol simpan diklik
 if (isset($_POST['simpan'])) {
     $judul = $_POST['judul'];
-    $isi = $_POST['isi'];
     $tanggal = date("Y-m-d H:i:s");
     $username = $_SESSION['username'];
     $gambar = '';
@@ -113,7 +112,7 @@ if (isset($_POST['simpan'])) {
                                 username = ?
                                 WHERE id = ?");
 
-        $stmt->bind_param("sssssi", $judul, $gambar, $tanggal, $username, $id);
+        $stmt->bind_param("ssssi", $judul, $gambar, $tanggal, $username, $id);
         $simpan = $stmt->execute();
     } else {
 		    //jika tidak ada id, lakukan insert data baru
