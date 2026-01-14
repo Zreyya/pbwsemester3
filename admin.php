@@ -15,7 +15,7 @@ if (!isset($_SESSION['username'])) {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Zreyya | Admin</title>
-    <link rel="icon" href="img/logo.png" />
+    <link rel="icon" href="asset/Raiden-Shogun-PNG-Clipart.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/> 
     <script src="script.js"></script>
@@ -161,6 +161,12 @@ if (!isset($_SESSION['username'])) {
                 <a class="nav-link" href="admin.php?page=article">Article</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="admin.php?page=gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin.php?page=user">User</a>
+            </li>
+            <li class="nav-item">
               <a id="dark" class="nav-link"><i class="bi bi-moon-fill"></i></a>
             </li>
             <li class="nav-item">
@@ -205,7 +211,7 @@ if (!isset($_SESSION['username'])) {
         <a href="https://twitter.com/udinusofficial" target="_blank"><i class="bi bi-twitter h2 p-2 h2 p-2"></i></a>
         <a href="https://wa.me/6287776182392" target="_blank"><i class="bi bi-whatsapp h2 p-2"></i></a>
       </div>
-      <p>Copyright &copy; 2025 Haydar Rafa Satya Putra - All Rights Reserved.</p>
+      <p>Copyright &copy; 2026 Haydar Rafa Satya Putra - All Rights Reserved.</p>
     </footer>
     <!-- footer end -->
     <script

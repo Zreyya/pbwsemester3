@@ -303,10 +303,13 @@ include "koneksi.php";
 </section>
 <!-- article end -->
     <!-- gallery -->
-    <section id="gallery" class="text-center p-5 bg-danger-subtle">
+    <!-- <section id="gallery" class="text-center p-5 bg-danger-subtle">
         <div class="container">
             <h1 class="fw-bold display-4 pb-3">Gallery</h1>
             <div id="carouselExampleCaptions" class="carousel slide">
+              <?php
+                $gallery = mysqli_query($conn, "SELECT * FROM gallery ORDER BY tanggal DESC");
+              ?>
               <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -315,41 +318,16 @@ include "koneksi.php";
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
               </div>
               <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="asset/1301967432_111154976498917_1753352194958.png" class="d-block w-100" alt="gambar1">
+              <?php $active = 'active'; ?>
+              <?php while($row = mysqli_fetch_assoc($gallery)) { ?>
+                <div class="carousel-item <?= $active ?>">
+                  <img src="img/<?= $row['gambar'] ?>" class="d-block w-100 justify-content-center" alt="<?= $row['judul'] ?>">
                   <div class="carousel-caption d-none d-md-block">
-                    <h5>Flower Garden</h5>
-                    <p>"Bumi luas sekali, tapi untungnya kita ketemu."</p>
+                    <h5><?= $row['judul'] ?></h5>
                   </div>
                 </div>
-                <div class="carousel-item">
-                  <img src="asset/1301967432_138149789228609_1753852018837.png" class="d-block w-100" alt="gambar2">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Mount Rinjani</h5>
-                    <p>"Tidak apa perjalanannya susah, asalkan puncaknya kamu."</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="asset/1301967432_4917917133_1753951497374.png" class="d-block w-100" alt="gambar3">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Back To School</h5>
-                    <p>"Tak semua usaha itu dipermudah, tapi semua yang berusaha pasti akan berubah."</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="asset/1301967432_6854236521_1751096954483-min.png" class="d-block w-100" alt="gambar4">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Katanya Warung</h5>
-                    <p>"Asmara t'lah terkalibrasi frekuensi yang sama."</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="asset/1301967432_97169485068215_1751640236537-min.png" class="d-block w-100" alt="gambar5">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>-3726 mdpl-</h5>
-                    <p>"Kamu adalah keindahan dari semesta dengan bentuk lain."</p>
-                  </div>
-                </div>
+                <?php $active = ''; ?>
+              <?php } ?>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -361,7 +339,36 @@ include "koneksi.php";
               </button>
             </div>
         </div>
-    </section>
+    </section> -->
+    <section id="gallery" class="text-center py-5 bg-danger-subtle">
+  <div class="container">
+    <h1 class="fw-bold display-4 pb-3">Gallery</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+      <?php
+      $sql = "SELECT * FROM gallery ORDER BY tanggal DESC";
+      $hasil = $conn->query($sql); 
+
+      while($row = $hasil->fetch_assoc()){
+      ?>
+        <div class="col">
+          <div class="card h-100">
+            <img src="img/<?= $row["gambar"]?>" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title"><?= $row["judul"]?></h5>
+            </div>
+            <div class="card-footer">
+              <small class="text-body-secondary">
+                <?= $row["tanggal"]?>
+              </small>
+            </div>
+          </div>
+        </div>
+        <?php
+      }
+      ?> 
+    </div>
+  </div>
+</section>
     <!-- Guest Book -->
     <section id="guest" class="py-5" style="background-color:  rgb(99, 99, 163);">
       <div class="container">
@@ -589,7 +596,7 @@ include "koneksi.php";
         <a href="https://www.instagram.com/zreyya.rap/" target="_blank"><i class="bi bi-instagram h2 p-2 text-dark"></i></a>
         <a href="https://wa.me/6287776182392" target="_blank"><i class="bi bi-whatsapp h2 p-2 text-dark"></i></a>
       </div>
-      <p>Copyright &copy; 2025 Haydar Rafa Satya Putra - All Rights Reserved.</p>
+      <p>Copyright &copy; 2026 Haydar Rafa Satya Putra - All Rights Reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">

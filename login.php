@@ -60,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="icon" href="asset/Raiden-Shogun-PNG-Clipart.png">
+    <script src="script.js"></script>
     <style>
         html, body {
             height: 100%;
@@ -175,7 +176,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <nav class="navbar navbar-dark navbar-expand-lg sticky-top" style="background-color: #305378">
         <div class="container">
-            <a class="navbar-brand" href="#">Zreyya</a>
+            <a class="navbar-brand" href="index.php">Zreyya</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -220,7 +221,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <a href="https://www.instagram.com/zreyya.rap/" target="_blank"><i class="bi bi-instagram h2 p-2"></i></a>
             <a href="https://wa.me/6287776182392" target="_blank"><i class="bi bi-whatsapp h2 p-2"></i></a>
         </div>
-        <p>Copyright &copy; 2025 Haydar Rafa Satya Putra - All Rights Reserved.</p>
+        <p>Copyright &copy; 2026 Haydar Rafa Satya Putra - All Rights Reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
